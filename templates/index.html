@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student manage system</title>
+</head>
+<body>
+<h2>
+    <a href="/admin/">Admin</a>
+</h2>
+<ul>
+    {% for student in students %}
+        <li>{{ student.name }} - {{ student.get_status_display }}</li>
+    {% endfor %}
+</ul>
+<hr/>
+<form action="/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
